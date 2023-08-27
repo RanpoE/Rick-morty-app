@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Rick-app",
+    "slug": "Rick-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
