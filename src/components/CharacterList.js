@@ -1,5 +1,8 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, Pressable } from 'react-native'
+
+const CARD_WIDTH = 160
+const CARD_HEIGHT = 220
 
 const CharacterList = ({ list }) => {
     return (
@@ -7,11 +10,18 @@ const CharacterList = ({ list }) => {
             {
                 list.map((item, index) => {
                     return (
-                        <View style={styles.card} key={index}>
-                            <View>
-                                <Image style={styles.image} source={item.image} />
+                        <Pressable key={index}>
+                            <View style={styles.card} >
+                                <View style={styles.imageBox}>
+                                    <Image style={styles.image} source={{ uri: item.image }} />
+                                </View>
+                                <View>
+                                    <View>
+                                        <Text>{item.name}</Text>
+                                    </View>
+                                </View>
                             </View>
-                        </View>
+                        </Pressable>
                     )
                 })
             }
@@ -22,15 +32,26 @@ const CharacterList = ({ list }) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        justifyContent: 'space-evenly'
     },
     card: {
-
+        width: CARD_WIDTH,
+        height: CARD_HEIGHT,
+        flexWrap: 'wrap',
+    },
+    imageBox: {
+        width: CARD_WIDTH,
+        height: CARD_HEIGHT - 60,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+        overflow: 'hidden'
     },
     image: {
-        width: 100,
-        height: 100
-    }
+        width: CARD_WIDTH,
+        height: CARD_HEIGHT - 60,
+        resizeMode: 'cover'
+    },
 })
 
 export default CharacterList

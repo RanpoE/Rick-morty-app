@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeScreen from '../screens/HomeScreen'
 import SearchScreen from '../screens/SearchScreen'
 import { Animated, StyleSheet, Dimensions } from 'react-native'
-import { Earth, Morty, Rick } from '../../assets/images'
+import { Rick, Search, Star } from '../../assets/images'
 import FavoritesScreen from '../screens/FavoritesScreen'
 import Icon from '../components/Icon'
 
@@ -17,12 +17,12 @@ const tabs = [
     {
         name: 'Search',
         screen: SearchScreen,
-        icon: Morty
+        icon: Search
     },
     {
         name: 'Favorites',
         screen: FavoritesScreen,
-        icon: Earth
+        icon: Star
     },
 ]
 

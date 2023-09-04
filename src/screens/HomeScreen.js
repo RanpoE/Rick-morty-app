@@ -10,7 +10,7 @@ const HomeScreen = () => {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character/1,183')
+    fetch('https://rickandmortyapi.com/api/character/1,183,2,6')
       .then(response => response.json())
       .then(data => {
         setCharacters(data);
