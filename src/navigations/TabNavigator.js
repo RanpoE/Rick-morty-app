@@ -47,7 +47,6 @@ const TabNavigator = () => {
                                         icon={icon}
                                         size={40}
                                         style={{
-                                            tintColor: focused ? 'blue' : 'white    '
                                         }}
                                     />
                                 )

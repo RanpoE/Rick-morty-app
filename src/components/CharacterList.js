@@ -1,16 +1,21 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, Pressable } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 const CARD_WIDTH = 160
 const CARD_HEIGHT = 220
 
 const CharacterList = ({ list }) => {
+    console.log(list)
+    const navigation = useNavigation()
     return (
         <View style={styles.container}>
             {
                 list.map((item, index) => {
                     return (
-                        <Pressable key={index}>
+                        <Pressable key={index} onPress={() => {
+                            navigation.navigate('CharacterDetail', { character: item })
+                        }}>
                             <View style={styles.card} >
                                 <View style={styles.imageBox}>
                                     <Image style={styles.image} source={{ uri: item.image }} />

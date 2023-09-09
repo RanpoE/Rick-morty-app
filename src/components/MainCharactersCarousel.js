@@ -9,7 +9,7 @@ const CARD_HEIGHT = 200;
 const MainCharactersCarousel = ({ list }) => {
     return (
         <FlatList
-            data={list}
+            data={list.splice(0, 4)}
             horizontal
             keyExtractor={i => i.id}
             decelerationRate='fast'
