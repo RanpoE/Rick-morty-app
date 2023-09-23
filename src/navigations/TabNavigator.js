@@ -1,17 +1,17 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import HomeScreen from '../screens/HomeScreen'
 import SearchScreen from '../screens/SearchScreen'
 import { Animated, StyleSheet, Dimensions } from 'react-native'
 import { Rick, Search, Star } from '../../assets/images'
 import FavoritesScreen from '../screens/FavoritesScreen'
 import Icon from '../components/Icon'
+import HomeNavigator from './HomeNavigator'
 
 
 const tabs = [
     {
         name: 'Home',
-        screen: HomeScreen,
+        screen: HomeNavigator,
         icon: Rick
     },
     {

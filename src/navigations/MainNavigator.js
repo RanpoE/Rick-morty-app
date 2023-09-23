@@ -4,8 +4,9 @@ import { NavigationContainer } from "@react-navigation/native"
 import TabNavigator from "./TabNavigator";
 import { StatusBar } from "react-native";
 import CharacterDetailsScreen from "../screens/CharacterDetailsScreen";
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element'
 
-const Stack = createStackNavigator()
+const Stack = createSharedElementStackNavigator()
 
 export const MainNavigator = () => {
   return (
@@ -17,13 +18,18 @@ export const MainNavigator = () => {
           component={TabNavigator}
           options={{
             headerShown: false,
+            useNativeDriver: true
           }}
         />
         <Stack.Screen
           name="CharacterDetail"
           component={CharacterDetailsScreen}
           options={{
-            headerShown: true,
+            headerShown: false,
+            useNativeDriver: true,
+            cardStyleInterpolator: ({current: {progress}}) => ({
+              cardStyle: progress
+            })
           }}
         />
       </Stack.Navigator>

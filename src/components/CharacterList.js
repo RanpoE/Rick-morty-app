@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import { SharedElement } from 'react-navigation-shared-element'
 
 const CARD_WIDTH = 160
 const CARD_HEIGHT = 220
 
 const CharacterList = ({ list }) => {
-    console.log(list)
     const navigation = useNavigation()
     return (
         <View style={styles.container}>
@@ -17,9 +17,11 @@ const CharacterList = ({ list }) => {
                             navigation.navigate('CharacterDetail', { character: item })
                         }}>
                             <View style={styles.card} >
+                                <SharedElement id={`character.${item.id}.image`}>
                                 <View style={styles.imageBox}>
                                     <Image style={styles.image} source={{ uri: item.image }} />
                                 </View>
+                                </SharedElement>
                                 <View>
                                     <View>
                                         <Text>{item.name}</Text>
