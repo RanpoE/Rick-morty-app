@@ -14,6 +14,7 @@ const HomeScreen = () => {
       .then(response => response.json())
       .then(data => {
         const { results } = data;
+        console.log(results)
         setCharacters(results);
       })
       .catch(error => {
@@ -27,7 +28,7 @@ const HomeScreen = () => {
       <ScreenHeader mainTitle="Rick & Morty" secondTitle="Adventures" />
       <ScrollView>
         <MainCharactersCarousel list={characters} />
-        <SectionHeader title="Popular char" buttonTitle='See more' />
+        <SectionHeader title="Popular characters" buttonTitle='See more' />
         <CharacterList list={characters} />
       </ScrollView>
     </View>

@@ -3,7 +3,7 @@ import { View, StyleSheet, Image } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import * as Animatable from 'react-native-animatable'
 import { Arrow } from '../../assets/images'
-import CharacterDetailsCard from '../components/CharacterDetailsCard'
+import CharacterDetailsCard from '../components/CharacterDetailsCard/CharacterDetailsCard'
 import Icon from '../components/Icon'
 
 const CharacterDetailsScreen = ({ navigation, route }) => {
